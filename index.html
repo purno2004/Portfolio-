@@ -70,10 +70,35 @@
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.2s, text-shadow 0.3s, letter-spacing 0.3s;
       white-space: nowrap;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+      transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+      border-radius: 2px;
     }
     .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active {
+      color: #fff;
+      text-shadow:
+        0 0 8px rgba(126,184,247,0.9),
+        0 0 20px rgba(126,184,247,0.5),
+        0 0 40px rgba(126,184,247,0.25);
+      letter-spacing: 0.13em;
+    }
+    .nav-links a.active::after {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 0 8px rgba(126,184,247,0.9), 0 0 18px rgba(126,184,247,0.5);
+    }
 
     @media (max-width: 600px) {
       nav { flex-direction: column; align-items: flex-start; padding: 0.75rem 1.25rem; gap: 0.5rem; }
@@ -1178,6 +1203,36 @@
     el.style.animationPlayState = 'paused';
     io.observe(el);
   });
+
+  // SCROLL SPY — game-like active nav
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = Array.from(navLinks)
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActive() {
+    const scrollY = window.scrollY + window.innerHeight * 0.35;
+    let current = sections[0];
+    sections.forEach(sec => { if (sec.offsetTop <= scrollY) current = sec; });
+    navLinks.forEach(a => {
+      const isActive = a.getAttribute('href') === '#' + current.id;
+      if (isActive) {
+        if (!a.classList.contains('active')) {
+          a.classList.add('active');
+          // brief flicker pulse
+          a.animate([
+            { opacity: 0.4, textShadow: '0 0 30px rgba(126,184,247,1)' },
+            { opacity: 1,   textShadow: '0 0 8px rgba(126,184,247,0.9)' }
+          ], { duration: 350, easing: 'ease-out' });
+        }
+      } else {
+        a.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
 </script>
 
 <!-- STARFIELD -->
