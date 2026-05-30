@@ -48,7 +48,7 @@
       color: var(--text);
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: nowrap; }
+    .nav-links { display: flex; gap: 1rem; list-style: none; flex-wrap: nowrap; }
     .nav-links a {
       font-size: 0.75rem;
       font-weight: 400;
@@ -235,6 +235,58 @@
     }
     .add-btn:hover { border-color: var(--accent); color: var(--accent); }
     .add-btn span { font-size: 1.2rem; line-height: 1; }
+
+    /* EXPERIENCE & VOLUNTEERING */
+    .exp-list, .vol-list {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .exp-item, .vol-item {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      transition: background 0.2s;
+    }
+    .exp-item:last-child, .vol-item:last-child { border-bottom: 1px solid var(--border); }
+    .exp-role, .vol-role {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .exp-org, .vol-org {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+    .exp-desc, .vol-desc {
+      font-size: 0.88rem;
+      color: #8899bb;
+      margin-top: 0.4rem;
+    }
+    .exp-period, .vol-period {
+      font-size: 0.78rem;
+      color: var(--muted);
+      white-space: nowrap;
+      font-style: italic;
+      font-family: var(--serif);
+      padding-top: 0.2rem;
+    }
+    .exp-type, .vol-type {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--accent-light);
+      padding: 0.15rem 0.55rem;
+      border-radius: 2px;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
 
     /* CONTACT */
     #contact .contact-inner {
@@ -761,6 +813,8 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#volunteering">Volunteering</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -846,7 +900,7 @@
     <div class="edu-item">
       <div>
         <div class="edu-degree">BSc in Environmental Science and Management</div>
-        <div class="edu-school">Independent University Bangladesh</div>
+        <div class="edu-school">Independent University, Bangladesh</div>
         <div class="edu-detail">Minor in Astronomy &amp; Astrophysics</div>
       </div>
       <div class="edu-year">2024 – Present</div>
@@ -858,6 +912,49 @@
         <div class="edu-detail">Science Group</div>
       </div>
       <div class="edu-year">2022 – 2023</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-in">
+  <div class="section-label">Experience</div>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div>
+        <div class="exp-type">Part-time</div>
+        <div class="exp-role" contenteditable="true" spellcheck="false">Outreach Ambassador</div>
+        <div class="exp-org" contenteditable="true" spellcheck="false">Center for Astronomy, Space Science and Astrophysics — Independent University, Bangladesh</div>
+      </div>
+      <div class="exp-period" contenteditable="true" spellcheck="false">2026 – Present</div>
+    </div>
+    <div class="exp-item">
+      <div>
+        <div class="exp-type">Internship</div>
+        <div class="exp-role" contenteditable="true" spellcheck="false">Undergraduate Research Intern</div>
+        <div class="exp-org" contenteditable="true" spellcheck="false">Center for Astronomy, Space Science and Astrophysics — Independent University, Bangladesh</div>
+      </div>
+      <div class="exp-period" contenteditable="true" spellcheck="false">2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VOLUNTEERING -->
+<section id="volunteering" class="fade-in">
+  <div class="section-label">Volunteering</div>
+  <div class="vol-list">
+    <div class="vol-item">
+      <div>
+        <div class="vol-type">Outreach</div>
+        <div class="vol-role" contenteditable="true" spellcheck="false">Volunteer — Durbin</div>
+        <div class="vol-org" contenteditable="true" spellcheck="false">Center for Astronomy, Space Science and Astrophysics (CASSA), Independent University, Bangladesh</div>
+        <div class="vol-desc" contenteditable="true" spellcheck="false">Durbin is a CASSA outreach program dedicated to astrophotography and science communication, powered by a cohort of volunteers from across Bangladesh. The program was founded by Wellesley College faculty Dr. Lamya Mowla with initial support from the Dunlap Institute at the University of Toronto.</div>
+      </div>
+      <div class="vol-period" contenteditable="true" spellcheck="false">2024 – Present</div>
     </div>
   </div>
 </section>
