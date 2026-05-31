@@ -9,14 +9,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:           #080d1e;
-      --text:         #ede8d5;
-      --muted:        #6a7a9a;
-      --accent:       #e8c84a;
-      --accent2:      #5b8fd4;
-      --accent-light: #141a36;
-      --border:       #1c2748;
-      --card:         #0c1126;
+      --bg:           #020409;
+      --text:         #e8f0ff;
+      --muted:        #5a7090;
+      --accent:       #00d4ff;
+      --accent2:      #a855f7;
+      --accent-light: #041020;
+      --border:       #0d2040;
+      --card:         #050c18;
       --serif:        'Playfair Display', 'IM Fell English', Georgia, serif;
       --sans:         'Crimson Pro', Georgia, serif;
     }
@@ -475,9 +475,9 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      filter: brightness(0.45) saturate(1.4) hue-rotate(-5deg);
+      filter: brightness(0.18) saturate(0.4) hue-rotate(200deg);
     }
-    /* Dark overlay to make text readable while preserving the painting */
+    /* Astronomical overlay - pure deep space feel */
     body::after {
       content: '';
       position: fixed;
@@ -485,62 +485,63 @@
       z-index: -1;
       background:
         linear-gradient(180deg,
-          rgba(4,8,28,0.60) 0%,
-          rgba(6,12,35,0.48) 35%,
-          rgba(8,15,40,0.52) 65%,
-          rgba(4,8,28,0.68) 100%),
-        radial-gradient(ellipse 50% 40% at 75% 10%, rgba(232,200,74,0.12) 0%, transparent 60%);
+          rgba(2,4,9,0.82) 0%,
+          rgba(3,6,14,0.72) 35%,
+          rgba(2,5,12,0.78) 65%,
+          rgba(2,4,9,0.88) 100%),
+        radial-gradient(ellipse 60% 50% at 70% 8%, rgba(0,212,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 20% 60%, rgba(168,85,247,0.05) 0%, transparent 60%);
       pointer-events: none;
     }
 
     /* star dots handled by canvas */
 
-    /* VAN GOGH — NAV */
+    /* ASTRONOMICAL — NAV */
     nav {
-      background: rgba(4,8,22,0.88) !important;
-      border-bottom: 1px solid rgba(232,200,74,0.18) !important;
+      background: rgba(2,5,14,0.92) !important;
+      border-bottom: 1px solid rgba(0,212,255,0.18) !important;
       backdrop-filter: blur(10px);
     }
 
-    /* VAN GOGH ACCENT TAG */
+    /* ASTRONOMICAL ACCENT TAG */
     .hero-tag {
       color: var(--accent) !important;
       letter-spacing: 0.18em;
-      text-shadow: 0 0 16px rgba(232,200,74,0.5);
+      text-shadow: 0 0 16px rgba(0,212,255,0.6);
     }
     .hero-tag::before { background: var(--accent) !important; }
 
-    /* GOLDEN GLOW on name */
+    /* CYAN GLOW on name */
     h1 em {
       color: var(--accent) !important;
-      text-shadow: 0 0 40px rgba(232,200,74,0.70), 0 0 80px rgba(232,200,74,0.30), 0 0 120px rgba(200,160,40,0.15);
+      text-shadow: 0 0 40px rgba(0,212,255,0.70), 0 0 80px rgba(0,212,255,0.30), 0 0 120px rgba(0,180,230,0.15);
     }
 
     .section-label { color: var(--accent) !important; opacity: 0.75; }
 
-    /* CARD glow — warm blue */
+    /* CARD glow — cyan/purple */
     .work-item:hover {
-      box-shadow: 0 4px 40px rgba(91,143,212,0.18), 0 0 0 1px rgba(232,200,74,0.15) !important;
+      box-shadow: 0 4px 40px rgba(0,212,255,0.15), 0 0 0 1px rgba(0,212,255,0.15) !important;
     }
 
-    /* PHOTO border — golden */
+    /* PHOTO border — cyan */
     .hero-photo-wrap::before {
-      border-color: rgba(232,200,74,0.50) !important;
-      box-shadow: 0 0 20px rgba(232,200,74,0.20), 0 0 50px rgba(200,160,40,0.10);
+      border-color: rgba(0,212,255,0.50) !important;
+      box-shadow: 0 0 20px rgba(0,212,255,0.20), 0 0 50px rgba(0,180,230,0.10);
     }
 
-    /* VAN GOGH btn */
+    /* ASTRONOMICAL btn */
     .btn-primary {
-      background: linear-gradient(135deg, #1c3060, #0e1a3a) !important;
-      border: 1px solid rgba(232,200,74,0.40) !important;
+      background: linear-gradient(135deg, #041830, #020c20) !important;
+      border: 1px solid rgba(0,212,255,0.45) !important;
       color: var(--accent) !important;
-      box-shadow: 0 0 15px rgba(232,200,74,0.10);
+      box-shadow: 0 0 15px rgba(0,212,255,0.10);
     }
     .btn-primary:hover {
-      background: linear-gradient(135deg, #e8c84a, #c8a030) !important;
-      color: #060b1c !important;
+      background: linear-gradient(135deg, #00d4ff, #0090c0) !important;
+      color: #010610 !important;
       border-color: transparent !important;
-      box-shadow: 0 0 25px rgba(232,200,74,0.40);
+      box-shadow: 0 0 28px rgba(0,212,255,0.50);
     }
 
 
@@ -552,7 +553,7 @@
       pointer-events: none;
       overflow: hidden;
     }
-    /* Upper swirl band */
+    /* Upper swirl band — cyan nebula */
     .milkyway::before {
       content: '';
       position: absolute;
@@ -563,19 +564,19 @@
       background: linear-gradient(
         108deg,
         transparent 0%,
-        rgba(25,50,130,0.12) 10%,
-        rgba(40,75,170,0.22) 25%,
-        rgba(55,95,190,0.28) 38%,
-        rgba(35,70,160,0.25) 52%,
-        rgba(20,48,130,0.18) 68%,
-        rgba(10,28,90,0.10) 82%,
+        rgba(0,100,200,0.08) 10%,
+        rgba(0,150,230,0.15) 25%,
+        rgba(0,180,255,0.20) 38%,
+        rgba(0,140,220,0.16) 52%,
+        rgba(0,80,180,0.10) 68%,
+        rgba(0,40,120,0.06) 82%,
         transparent 100%
       );
       filter: blur(18px);
       transform: rotate(-12deg);
       animation: swirlMove 28s ease-in-out infinite alternate;
     }
-    /* Lower swirl / village hills glow */
+    /* Lower swirl / cosmic dust */
     .milkyway::after {
       content: '';
       position: absolute;
@@ -586,10 +587,10 @@
       background: linear-gradient(
         112deg,
         transparent 0%,
-        rgba(18,42,115,0.08) 20%,
-        rgba(38,70,160,0.18) 40%,
-        rgba(50,85,175,0.22) 55%,
-        rgba(30,60,140,0.15) 72%,
+        rgba(80,20,160,0.06) 20%,
+        rgba(140,50,220,0.12) 40%,
+        rgba(168,85,247,0.15) 55%,
+        rgba(100,30,180,0.10) 72%,
         transparent 100%
       );
       filter: blur(12px);
@@ -615,33 +616,33 @@
     .nebula-1 {
       width: 800px; height: 500px;
       top: -80px; left: -180px;
-      background: radial-gradient(ellipse, rgba(30,55,155,0.55) 0%, rgba(14,28,90,0.30) 50%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,180,255,0.22) 0%, rgba(0,80,180,0.12) 50%, transparent 70%);
       animation-duration: 20s;
     }
     .nebula-2 {
       width: 650px; height: 480px;
       bottom: 5%; right: -120px;
-      background: radial-gradient(ellipse, rgba(20,50,130,0.50) 0%, rgba(10,25,80,0.28) 50%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(168,85,247,0.18) 0%, rgba(80,20,160,0.10) 50%, transparent 70%);
       animation-duration: 25s; animation-delay: -8s;
     }
     .nebula-3 {
       width: 500px; height: 320px;
       top: 30%; left: 20%;
-      background: radial-gradient(ellipse, rgba(35,65,160,0.38) 0%, rgba(18,40,110,0.20) 50%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,200,255,0.12) 0%, rgba(0,100,200,0.07) 50%, transparent 70%);
       animation-duration: 30s; animation-delay: -4s;
     }
     .nebula-4 {
       width: 420px; height: 280px;
       top: 55%; left: 55%;
-      background: radial-gradient(ellipse, rgba(25,50,140,0.35) 0%, rgba(12,30,95,0.18) 50%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(168,85,247,0.14) 0%, rgba(80,20,160,0.08) 50%, transparent 70%);
       filter: blur(70px);
       animation-duration: 22s; animation-delay: -12s;
     }
-    /* Extra golden moon nebula glow */
+    /* Cyan pulsar glow */
     .nebula-5 {
       width: 280px; height: 280px;
       top: 0%; right: 10%;
-      background: radial-gradient(ellipse, rgba(232,200,74,0.20) 0%, rgba(200,160,40,0.10) 40%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,212,255,0.18) 0%, rgba(0,150,220,0.08) 40%, transparent 70%);
       filter: blur(40px);
       animation-duration: 15s;
     }
@@ -659,12 +660,12 @@
       left: -10%;
       width: 200px;
       height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(232,200,74,0.95), rgba(255,245,160,1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.95), rgba(180,245,255,1), transparent);
       transform: rotate(-18deg);
       animation: shoot 9s linear infinite;
       z-index: 1;
       pointer-events: none;
-      box-shadow: 0 0 8px rgba(232,200,74,0.6);
+      box-shadow: 0 0 8px rgba(0,212,255,0.6);
     }
     .shooting-star::after {
       content: '';
@@ -672,8 +673,8 @@
       right: 0; top: 0;
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: #fff8c0;
-      box-shadow: 0 0 10px 4px rgba(232,200,74,0.9), 0 0 20px 8px rgba(232,200,74,0.4);
+      background: #c0f8ff;
+      box-shadow: 0 0 10px 4px rgba(0,212,255,0.9), 0 0 20px 8px rgba(0,212,255,0.4);
       transform: translateY(-2.5px);
     }
     .shooting-star-2 {
@@ -691,34 +692,35 @@
       100% { left: 112%; opacity: 0; }
     }
 
-    /* VAN GOGH — LUMINOUS MOON */
+    /* ASTRONOMICAL — PULSAR / DISTANT STAR */
     .planet {
       position: fixed;
       right: 8%;
       top: 5%;
-      width: 80px; height: 80px;
+      width: 60px; height: 60px;
       border-radius: 50%;
-      background: radial-gradient(circle at 38% 38%,
-        #fff8e0 0%, #ffeea0 25%, #e8c84a 55%, #c8a030 80%, #8a6010 100%);
+      background: radial-gradient(circle at 40% 40%,
+        #e8f8ff 0%, #a0e8ff 20%, #00d4ff 55%, #0060a0 80%, #002040 100%);
       box-shadow:
-        inset -8px -8px 18px rgba(120,80,0,0.45),
-        inset 3px 3px 10px rgba(255,255,200,0.5),
-        0 0 30px rgba(232,200,74,0.60),
-        0 0 60px rgba(232,200,74,0.35),
-        0 0 100px rgba(200,160,40,0.20),
-        0 0 160px rgba(180,140,20,0.10);
+        inset -4px -4px 12px rgba(0,40,80,0.5),
+        inset 2px 2px 8px rgba(200,245,255,0.6),
+        0 0 30px rgba(0,212,255,0.70),
+        0 0 60px rgba(0,212,255,0.40),
+        0 0 100px rgba(0,180,230,0.20),
+        0 0 160px rgba(0,140,200,0.10);
       z-index: 1;
       pointer-events: none;
       animation: moonGlow 5s ease-in-out infinite;
+      display: block;
     }
     @keyframes moonGlow {
       0%, 100% {
-        box-shadow: inset -8px -8px 18px rgba(120,80,0,0.45), inset 3px 3px 10px rgba(255,255,200,0.5),
-          0 0 30px rgba(232,200,74,0.60), 0 0 60px rgba(232,200,74,0.35), 0 0 100px rgba(200,160,40,0.20);
+        box-shadow: inset -4px -4px 12px rgba(0,40,80,0.5), inset 2px 2px 8px rgba(200,245,255,0.6),
+          0 0 30px rgba(0,212,255,0.70), 0 0 60px rgba(0,212,255,0.40), 0 0 100px rgba(0,180,230,0.20);
       }
       50% {
-        box-shadow: inset -8px -8px 18px rgba(120,80,0,0.45), inset 3px 3px 10px rgba(255,255,200,0.5),
-          0 0 40px rgba(232,200,74,0.75), 0 0 80px rgba(232,200,74,0.50), 0 0 130px rgba(200,160,40,0.30);
+        box-shadow: inset -4px -4px 12px rgba(0,40,80,0.5), inset 2px 2px 8px rgba(200,245,255,0.6),
+          0 0 45px rgba(0,212,255,0.90), 0 0 90px rgba(0,212,255,0.55), 0 0 140px rgba(0,180,230,0.35);
       }
     }
     .planet::before {
@@ -761,32 +763,32 @@
 
     body > *:not(#starfield) { position: relative; z-index: 1; }
 
-    /* VAN GOGH ACCENTS */
+    /* ASTRONOMICAL ACCENTS */
     h1 em { color: var(--accent) !important; }
-    .work-type { color: var(--accent) !important; background: rgba(232,200,74,0.08) !important; border: 1px solid rgba(232,200,74,0.18) !important; }
-    .tag { background: rgba(91,143,212,0.12) !important; color: #a8c8f0 !important; border: 1px solid rgba(91,143,212,0.22) !important; }
-    .nav-logo { color: var(--accent) !important; text-shadow: 0 0 20px rgba(232,200,74,0.4); }
-    .nav-links a { color: #8899bb; }
+    .work-type { color: var(--accent) !important; background: rgba(0,212,255,0.08) !important; border: 1px solid rgba(0,212,255,0.18) !important; }
+    .tag { background: rgba(168,85,247,0.12) !important; color: #c4a8ff !important; border: 1px solid rgba(168,85,247,0.22) !important; }
+    .nav-logo { color: var(--accent) !important; text-shadow: 0 0 20px rgba(0,212,255,0.5); }
+    .nav-links a { color: #6888aa; }
     .nav-links a:hover { color: var(--accent) !important; }
     .nav-links a.active {
       color: var(--accent) !important;
-      text-shadow: 0 0 8px rgba(232,200,74,0.9), 0 0 20px rgba(232,200,74,0.5), 0 0 40px rgba(232,200,74,0.25) !important;
+      text-shadow: 0 0 8px rgba(0,212,255,0.9), 0 0 20px rgba(0,212,255,0.5), 0 0 40px rgba(0,212,255,0.25) !important;
     }
     .nav-links a::after { background: var(--accent) !important; box-shadow: 0 0 6px var(--accent) !important; }
     .work-item:hover {
-      box-shadow: 0 4px 24px rgba(91,143,212,0.10) !important;
+      box-shadow: 0 4px 24px rgba(0,212,255,0.12) !important;
     }
     nav {
-      background: rgba(6,10,25,0.95) !important;
-      border-bottom: 1px solid rgba(232,200,74,0.15) !important;
+      background: rgba(2,5,14,0.95) !important;
+      border-bottom: 1px solid rgba(0,212,255,0.15) !important;
     }
-    /* Hero tag line gold */
+    /* Hero tag line cyan */
     .hero-tag { color: var(--accent) !important; }
     .hero-tag::before { background: var(--accent) !important; }
     /* Contact links */
     .contact-link:hover { color: var(--accent) !important; }
     /* Edu/exp org color */
-    .edu-school, .exp-org, .vol-org { color: #a8c8f0 !important; }
+    .edu-school, .exp-org, .vol-org { color: #80d4ff !important; }
 
 
     /* EDUCATION */
@@ -865,11 +867,11 @@
 
     /* ═══ VAN GOGH BRUSHSTROKE DETAILS ═══ */
 
-    /* Painterly card texture */
+    /* Astronomical card glass */
     .work-item {
-      background: rgba(5,10,30,0.72) !important;
+      background: rgba(2,8,20,0.75) !important;
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(91,143,212,0.20) !important;
+      border: 1px solid rgba(0,212,255,0.15) !important;
       position: relative;
       overflow: hidden;
     }
@@ -881,69 +883,69 @@
         -55deg,
         transparent,
         transparent 3px,
-        rgba(91,143,212,0.015) 3px,
-        rgba(91,143,212,0.015) 6px
+        rgba(0,212,255,0.012) 3px,
+        rgba(0,212,255,0.012) 6px
       );
       pointer-events: none;
     }
 
-    /* Section labels — golden accent */
-    .section-label::after { background: rgba(232,200,74,0.20) !important; height: 1px; }
-    .divider { background: rgba(232,200,74,0.10) !important; }
-    .detail-item { border-top-color: rgba(232,200,74,0.12) !important; }
-    .exp-item, .vol-item, .edu-item { border-top-color: rgba(91,143,212,0.18) !important; }
+    /* Section labels — cyan accent */
+    .section-label::after { background: rgba(0,212,255,0.20) !important; height: 1px; }
+    .divider { background: rgba(0,212,255,0.10) !important; }
+    .detail-item { border-top-color: rgba(0,212,255,0.12) !important; }
+    .exp-item, .vol-item, .edu-item { border-top-color: rgba(0,212,255,0.15) !important; }
     .exp-item:last-child, .vol-item:last-child, .edu-item:last-child {
-      border-bottom-color: rgba(91,143,212,0.18) !important;
+      border-bottom-color: rgba(0,212,255,0.15) !important;
     }
-    .contact-link { border-top-color: rgba(91,143,212,0.18) !important; }
-    .contact-link:last-child { border-bottom-color: rgba(91,143,212,0.18) !important; }
+    .contact-link { border-top-color: rgba(0,212,255,0.15) !important; }
+    .contact-link:last-child { border-bottom-color: rgba(0,212,255,0.15) !important; }
 
     /* Hero name glow */
     h1 { text-shadow: 0 2px 30px rgba(14,28,82,0.5); }
 
-    /* Golden secondary button */
+    /* Cyan secondary button */
     .btn-secondary {
-      border-color: rgba(232,200,74,0.30) !important;
-      color: #c8b88a !important;
+      border-color: rgba(0,212,255,0.30) !important;
+      color: #80c8e0 !important;
     }
     .btn-secondary:hover {
       border-color: var(--accent) !important;
       color: var(--accent) !important;
-      box-shadow: 0 0 15px rgba(232,200,74,0.15);
+      box-shadow: 0 0 15px rgba(0,212,255,0.18);
     }
 
     /* Footer */
     footer {
-      border-top-color: rgba(232,200,74,0.10) !important;
-      background: rgba(6,10,25,0.6);
+      border-top-color: rgba(0,212,255,0.10) !important;
+      background: rgba(2,5,14,0.6);
     }
 
     /* Add work button */
-    .add-btn { border-color: rgba(91,143,212,0.25) !important; }
+    .add-btn { border-color: rgba(0,212,255,0.22) !important; }
     .add-btn:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
 
     /* Modal */
     .modal {
-      background: rgba(5,10,30,0.85) !important;
+      background: rgba(2,6,18,0.90) !important;
       backdrop-filter: blur(16px);
-      border-color: rgba(232,200,74,0.20) !important;
+      border-color: rgba(0,212,255,0.22) !important;
     }
     .form-row input, .form-row textarea, .form-row select {
-      background: rgba(8,12,28,0.9) !important;
-      border-color: rgba(91,143,212,0.22) !important;
+      background: rgba(4,10,24,0.9) !important;
+      border-color: rgba(0,212,255,0.18) !important;
     }
     .form-row input:focus, .form-row textarea:focus, .form-row select:focus {
       border-color: var(--accent) !important;
-      box-shadow: 0 0 10px rgba(232,200,74,0.12) !important;
+      box-shadow: 0 0 10px rgba(0,212,255,0.14) !important;
     }
 
     /* Tag hover */
     .tag { transition: all 0.2s; }
-    .tag:hover { background: rgba(91,143,212,0.22) !important; box-shadow: 0 0 10px rgba(91,143,212,0.2); }
+    .tag:hover { background: rgba(168,85,247,0.22) !important; box-shadow: 0 0 10px rgba(168,85,247,0.2); }
 
     /* Photo border */
-    .hero-photo-wrap::before { border-color: rgba(232,200,74,0.45) !important; }
-    .about-photo { border-color: rgba(91,143,212,0.25) !important; }
+    .hero-photo-wrap::before { border-color: rgba(0,212,255,0.45) !important; }
+    .about-photo { border-color: rgba(0,212,255,0.22) !important; }
 
     /* Subtle grain overlay for painterly feel */
     body::before {
@@ -967,16 +969,16 @@
 
     /* Detail items glass */
     .detail-item {
-      background: rgba(5,10,30,0.40);
+      background: rgba(2,8,22,0.45);
       padding: 0.8rem 1rem !important;
       border-radius: 3px;
-      border: 1px solid rgba(91,143,212,0.15) !important;
+      border: 1px solid rgba(0,212,255,0.12) !important;
       border-top: none !important;
     }
 
     /* exp/vol/edu items */
     .exp-item, .vol-item, .edu-item {
-      background: rgba(5,10,30,0.35);
+      background: rgba(2,8,22,0.38);
       padding-left: 1rem;
       padding-right: 1rem;
       border-radius: 2px;
@@ -988,42 +990,42 @@
     /* Remove planet/moon since the painting has the big glowing orb */
     .planet { display: none; }
 
-    /* Shooting stars stay but more gold-bright */
+    /* Shooting stars stay but more cyan-bright */
     .shooting-star {
-      box-shadow: 0 0 12px rgba(232,200,74,0.8), 0 0 25px rgba(232,200,74,0.4) !important;
+      box-shadow: 0 0 12px rgba(0,212,255,0.8), 0 0 25px rgba(0,212,255,0.4) !important;
     }
 
     /* Tags glass */
     .tag {
-      background: rgba(14,28,82,0.55) !important;
+      background: rgba(80,20,140,0.45) !important;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(91,143,212,0.30) !important;
+      border: 1px solid rgba(168,85,247,0.30) !important;
     }
 
     /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: rgba(4,8,28,0.8); }
-    ::-webkit-scrollbar-thumb { background: rgba(232,200,74,0.35); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(232,200,74,0.60); }
+    ::-webkit-scrollbar-track { background: rgba(2,4,12,0.8); }
+    ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.35); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0,212,255,0.60); }
 
-    /* Hero description text slightly brighter */
-    .hero-desc { color: #b8c8e0 !important; }
-    .about-text p, .exp-desc, .vol-desc { color: #a8b8d0 !important; }
+    /* Hero description text */
+    .hero-desc { color: #90b8d0 !important; }
+    .about-text p, .exp-desc, .vol-desc { color: #80a8c8 !important; }
 
     /* Section background glass panel */
     #hero, #about, #education, #experience, #volunteering, #works, #contact {
-      background: rgba(4,8,24,0.22);
+      background: rgba(2,5,15,0.25);
       border-radius: 4px;
     }
 
 
-    /* Painting credit */
+    /* Observatory credit */
     .painting-credit {
       text-align: center;
       font-family: var(--serif);
       font-size: 0.68rem;
       font-style: italic;
-      color: rgba(232,200,74,0.40);
+      color: rgba(0,212,255,0.35);
       letter-spacing: 0.08em;
       padding: 0.5rem 2rem 0.3rem;
       pointer-events: none;
@@ -1032,14 +1034,14 @@
     /* ═══ LANGUAGE PROFICIENCY ═══ */
     #languages .lang-list { display: flex; flex-direction: column; gap: 0; }
     .lang-item {
-      border-top: 1px solid rgba(91,143,212,0.18);
+      border-top: 1px solid rgba(0,212,255,0.15);
       padding: 1.2rem 0;
       display: grid;
       grid-template-columns: 130px 1fr auto;
       align-items: center;
       gap: 1.2rem;
     }
-    .lang-item:last-child { border-bottom: 1px solid rgba(91,143,212,0.18); }
+    .lang-item:last-child { border-bottom: 1px solid rgba(0,212,255,0.15); }
     .lang-name {
       font-family: var(--serif);
       font-size: 1rem;
@@ -1049,7 +1051,7 @@
     .lang-bar-wrap {
       position: relative;
       height: 6px;
-      background: rgba(91,143,212,0.12);
+      background: rgba(0,212,255,0.10);
       border-radius: 100px;
       overflow: visible;
       cursor: pointer;
@@ -1057,7 +1059,7 @@
     .lang-bar-fill {
       height: 100%;
       border-radius: 100px;
-      background: linear-gradient(90deg, #3a6aaa, #e8c84a);
+      background: linear-gradient(90deg, #005080, #00d4ff);
       transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
       position: relative;
     }
@@ -1069,8 +1071,8 @@
       width: 14px; height: 14px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 8px rgba(232,200,74,0.7), 0 0 16px rgba(232,200,74,0.3);
-      border: 2px solid rgba(8,13,30,0.8);
+      box-shadow: 0 0 8px rgba(0,212,255,0.7), 0 0 16px rgba(0,212,255,0.3);
+      border: 2px solid rgba(2,8,20,0.8);
       cursor: grab;
     }
     .lang-bar-fill::after:active { cursor: grabbing; }
@@ -1084,68 +1086,7 @@
       text-align: right;
     }
 
-    /* ═══ THEME SWITCHER ═══ */
-    #theme { padding-bottom: 5rem; }
-    .theme-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 720px) { .theme-grid { grid-template-columns: 1fr 1fr; } }
-    .theme-card {
-      border: 1.5px solid rgba(91,143,212,0.20);
-      border-radius: 6px;
-      padding: 0;
-      cursor: pointer;
-      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
-      overflow: hidden;
-      position: relative;
-      background: rgba(5,10,30,0.55);
-      backdrop-filter: blur(6px);
-    }
-    .theme-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-    }
-    .theme-card.active {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(232,200,74,0.20);
-    }
-    .theme-preview {
-      width: 100%; height: 90px;
-      display: block;
-    }
-    .theme-info {
-      padding: 0.75rem 1rem 0.85rem;
-    }
-    .theme-name {
-      font-family: var(--serif);
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-      color: var(--text);
-    }
-    .theme-desc {
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-    }
-    .theme-card.active .theme-name { color: var(--accent); }
-    .theme-active-badge {
-      position: absolute;
-      top: 0.5rem; right: 0.5rem;
-      background: var(--accent);
-      color: #060b1c;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.15rem 0.45rem;
-      border-radius: 100px;
-      display: none;
-    }
-    .theme-card.active .theme-active-badge { display: block; }
+
 
   </style>
 </head>
@@ -1169,7 +1110,6 @@
     <li><a href="#volunteering">Volunteering</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#theme">Theme</a></li>
   </ul>
 </nav>
 
@@ -1297,8 +1237,18 @@
     </div>
     <div class="lang-item" data-lang="Chinese">
       <div class="lang-name">Chinese</div>
-      <div class="lang-bar-wrap" data-value="20"><div class="lang-bar-fill" style="width:20%"></div></div>
-      <div class="lang-label">Beginner</div>
+      <div class="lang-bar-wrap" data-value="15"><div class="lang-bar-fill" style="width:15%"></div></div>
+      <div class="lang-label">Elementary</div>
+    </div>
+    <div class="lang-item" data-lang="Japanese">
+      <div class="lang-name">Japanese</div>
+      <div class="lang-bar-wrap" data-value="15"><div class="lang-bar-fill" style="width:15%"></div></div>
+      <div class="lang-label">Elementary</div>
+    </div>
+    <div class="lang-item" data-lang="Spanish">
+      <div class="lang-name">Spanish</div>
+      <div class="lang-bar-wrap" data-value="15"><div class="lang-bar-fill" style="width:15%"></div></div>
+      <div class="lang-label">Elementary</div>
     </div>
     <div class="lang-item" data-lang="German">
       <div class="lang-name">German</div>
@@ -1476,187 +1426,7 @@
 </section>
 
 
-<div class="divider"></div>
-
-<!-- THEME -->
-<section id="theme">
-  <div class="section-label">Theme</div>
-  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.8rem;">Choose a visual theme for this page. Your preference is saved locally.</p>
-  <div class="theme-grid">
-
-    <div class="theme-card active" data-theme="starry-night" onclick="setTheme('starry-night')">
-      <span class="theme-active-badge">Active</span>
-      <svg class="theme-preview" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="tn1" cx="75%" cy="15%" r="40%"><stop offset="0%" stop-color="#e8c84a" stop-opacity="0.9"/><stop offset="100%" stop-color="#0a1035" stop-opacity="0"/></radialGradient>
-        </defs>
-        <rect width="240" height="90" fill="#07102a"/>
-        <!-- swirls -->
-        <ellipse cx="60" cy="30" rx="55" ry="22" fill="none" stroke="#1e3a8a" stroke-width="6" opacity="0.5"/>
-        <ellipse cx="60" cy="30" rx="38" ry="14" fill="none" stroke="#2a52a8" stroke-width="4" opacity="0.5"/>
-        <ellipse cx="180" cy="55" rx="45" ry="18" fill="none" stroke="#1e3a8a" stroke-width="5" opacity="0.4"/>
-        <ellipse cx="130" cy="20" rx="35" ry="12" fill="none" stroke="#2a52a8" stroke-width="3" opacity="0.35"/>
-        <!-- moon -->
-        <circle cx="185" cy="18" r="14" fill="#e8c84a" opacity="0.85"/>
-        <circle cx="185" cy="18" r="20" fill="url(#tn1)" opacity="0.6"/>
-        <!-- stars -->
-        <circle cx="30" cy="12" r="2.5" fill="#fff8c0" opacity="0.9"/>
-        <circle cx="95" cy="8" r="1.8" fill="#fff" opacity="0.8"/>
-        <circle cx="145" cy="40" r="2" fill="#fff8c0" opacity="0.7"/>
-        <circle cx="220" cy="50" r="1.5" fill="#fff" opacity="0.75"/>
-        <circle cx="50" cy="60" r="1.5" fill="#fff8c0" opacity="0.6"/>
-        <circle cx="110" cy="70" r="1.2" fill="#fff" opacity="0.5"/>
-      </svg>
-      <div class="theme-info">
-        <div class="theme-name">Starry Night</div>
-        <div class="theme-desc">Van Gogh · Deep blues & gold</div>
-      </div>
-    </div>
-
-    <div class="theme-card" data-theme="deep-space" onclick="setTheme('deep-space')">
-      <svg class="theme-preview" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="ts1" cx="30%" cy="40%" r="50%"><stop offset="0%" stop-color="#4a2080" stop-opacity="0.7"/><stop offset="100%" stop-color="#000510" stop-opacity="0"/></radialGradient>
-          <radialGradient id="ts2" cx="75%" cy="60%" r="40%"><stop offset="0%" stop-color="#1a4080" stop-opacity="0.6"/><stop offset="100%" stop-color="#000510" stop-opacity="0"/></radialGradient>
-        </defs>
-        <rect width="240" height="90" fill="#000510"/>
-        <rect width="240" height="90" fill="url(#ts1)"/>
-        <rect width="240" height="90" fill="url(#ts2)"/>
-        <!-- nebula -->
-        <ellipse cx="80" cy="45" rx="70" ry="35" fill="#6010b0" opacity="0.10"/>
-        <!-- stars -->
-        <circle cx="20" cy="15" r="1.5" fill="#fff" opacity="0.9"/>
-        <circle cx="55" cy="8" r="2.2" fill="#c0d8ff" opacity="0.85"/>
-        <circle cx="100" cy="25" r="1.2" fill="#fff" opacity="0.7"/>
-        <circle cx="140" cy="10" r="1.8" fill="#fff" opacity="0.8"/>
-        <circle cx="180" cy="35" r="1" fill="#c0d8ff" opacity="0.7"/>
-        <circle cx="210" cy="15" r="2" fill="#fff" opacity="0.75"/>
-        <circle cx="230" cy="60" r="1.3" fill="#fff" opacity="0.6"/>
-        <circle cx="35" cy="70" r="1" fill="#fff" opacity="0.6"/>
-        <circle cx="160" cy="75" r="1.5" fill="#c0d8ff" opacity="0.55"/>
-        <!-- planet -->
-        <circle cx="195" cy="55" r="16" fill="#1a0840" opacity="0.9"/>
-        <circle cx="195" cy="55" r="16" fill="none" stroke="#4a2080" stroke-width="1" opacity="0.5"/>
-        <ellipse cx="195" cy="55" rx="26" ry="6" fill="none" stroke="#4a2080" stroke-width="1.5" opacity="0.4" transform="rotate(-20 195 55)"/>
-      </svg>
-      <div class="theme-info">
-        <div class="theme-name">Deep Space</div>
-        <div class="theme-desc">Nebulae · Purple & midnight</div>
-      </div>
-    </div>
-
-    <div class="theme-card" data-theme="aurora" onclick="setTheme('aurora')">
-      <svg class="theme-preview" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ta1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00c896"/><stop offset="50%" stop-color="#0070c0"/><stop offset="100%" stop-color="#8000c0"/></linearGradient>
-        </defs>
-        <rect width="240" height="90" fill="#020d18"/>
-        <!-- aurora curtains -->
-        <path d="M0,55 Q40,20 80,40 Q120,60 160,25 Q200,0 240,30 L240,90 L0,90 Z" fill="#00c896" opacity="0.12"/>
-        <path d="M0,65 Q50,35 100,50 Q150,65 200,35 L240,45 L240,90 L0,90 Z" fill="#0070c0" opacity="0.15"/>
-        <path d="M0,70 Q60,45 120,60 Q180,75 240,50 L240,90 L0,90 Z" fill="#8000c0" opacity="0.10"/>
-        <!-- vertical aurora rays -->
-        <line x1="40" y1="0" x2="30" y2="90" stroke="#00c896" stroke-width="2" opacity="0.08"/>
-        <line x1="100" y1="0" x2="90" y2="90" stroke="#0070c0" stroke-width="1.5" opacity="0.07"/>
-        <line x1="160" y1="0" x2="155" y2="90" stroke="#8000c0" stroke-width="2" opacity="0.07"/>
-        <!-- stars -->
-        <circle cx="15" cy="10" r="1.2" fill="#fff" opacity="0.8"/>
-        <circle cx="70" cy="6" r="1" fill="#fff" opacity="0.7"/>
-        <circle cx="130" cy="12" r="1.5" fill="#fff" opacity="0.75"/>
-        <circle cx="200" cy="8" r="1" fill="#fff" opacity="0.65"/>
-      </svg>
-      <div class="theme-info">
-        <div class="theme-name">Aurora</div>
-        <div class="theme-desc">Northern lights · Teal & violet</div>
-      </div>
-    </div>
-
-    <div class="theme-card" data-theme="forest" onclick="setTheme('forest')">
-      <svg class="theme-preview" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-        <rect width="240" height="90" fill="#091a0d"/>
-        <!-- moon glow -->
-        <circle cx="200" cy="20" r="12" fill="#f0e8c0" opacity="0.7"/>
-        <circle cx="200" cy="20" r="22" fill="#f0e8c0" opacity="0.08"/>
-        <!-- tree silhouettes -->
-        <polygon points="30,90 50,40 70,90" fill="#0a2010" opacity="0.9"/>
-        <polygon points="55,90 80,30 105,90" fill="#061508" opacity="0.95"/>
-        <polygon points="90,90 110,45 130,90" fill="#0a2010" opacity="0.85"/>
-        <polygon points="130,90 155,35 180,90" fill="#061508" opacity="0.9"/>
-        <polygon points="170,90 185,50 200,90" fill="#0a2010" opacity="0.85"/>
-        <polygon points="0,90 15,55 30,90" fill="#061508" opacity="0.9"/>
-        <polygon points="205,90 218,48 232,90" fill="#0a2010" opacity="0.85"/>
-        <!-- mist -->
-        <rect x="0" y="72" width="240" height="18" fill="#0d2a14" opacity="0.6"/>
-        <!-- firefly dots -->
-        <circle cx="45" cy="65" r="1.5" fill="#aaff88" opacity="0.7"/>
-        <circle cx="100" cy="58" r="1.2" fill="#88ffaa" opacity="0.65"/>
-        <circle cx="158" cy="62" r="1.5" fill="#aaff88" opacity="0.6"/>
-      </svg>
-      <div class="theme-info">
-        <div class="theme-name">Forest Night</div>
-        <div class="theme-desc">Nature · Deep green & mist</div>
-      </div>
-    </div>
-
-    <div class="theme-card" data-theme="ocean" onclick="setTheme('ocean')">
-      <svg class="theme-preview" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="to1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#020c18"/><stop offset="100%" stop-color="#0a3060"/></linearGradient>
-        </defs>
-        <rect width="240" height="90" fill="url(#to1)"/>
-        <!-- stars reflection -->
-        <circle cx="40" cy="15" r="1.5" fill="#fff" opacity="0.8"/>
-        <circle cx="90" cy="8" r="1" fill="#fff" opacity="0.7"/>
-        <circle cx="150" cy="18" r="1.8" fill="#fff" opacity="0.75"/>
-        <circle cx="210" cy="10" r="1.2" fill="#fff" opacity="0.65"/>
-        <!-- moon -->
-        <circle cx="50" cy="22" r="10" fill="#e8e0c0" opacity="0.6"/>
-        <!-- ocean horizon -->
-        <rect x="0" y="55" width="240" height="35" fill="#061830" opacity="0.9"/>
-        <!-- waves -->
-        <path d="M0,58 Q30,52 60,58 Q90,64 120,58 Q150,52 180,58 Q210,64 240,58" fill="none" stroke="#1a60a0" stroke-width="1.5" opacity="0.5"/>
-        <path d="M0,65 Q30,59 60,65 Q90,71 120,65 Q150,59 180,65 Q210,71 240,65" fill="none" stroke="#1a60a0" stroke-width="1" opacity="0.35"/>
-        <!-- moon reflection -->
-        <path d="M40,56 Q50,60 60,56" fill="none" stroke="#e8e0c0" stroke-width="1.5" opacity="0.3"/>
-      </svg>
-      <div class="theme-info">
-        <div class="theme-name">Ocean Night</div>
-        <div class="theme-desc">Coastal · Navy & silver</div>
-      </div>
-    </div>
-
-    <div class="theme-card" data-theme="desert" onclick="setTheme('desert')">
-      <svg class="theme-preview" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="td1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0a0510"/><stop offset="60%" stop-color="#1a0a00"/><stop offset="100%" stop-color="#3a1800"/></linearGradient>
-        </defs>
-        <rect width="240" height="90" fill="url(#td1)"/>
-        <!-- milky way -->
-        <ellipse cx="120" cy="30" rx="130" ry="20" fill="#fff8f0" opacity="0.04" transform="rotate(-20 120 30)"/>
-        <!-- stars -->
-        <circle cx="20" cy="12" r="1.8" fill="#fff8e0" opacity="0.9"/>
-        <circle cx="65" cy="6" r="1.2" fill="#fff" opacity="0.8"/>
-        <circle cx="110" cy="18" r="2" fill="#fff8e0" opacity="0.85"/>
-        <circle cx="165" cy="8" r="1.4" fill="#fff" opacity="0.75"/>
-        <circle cx="210" cy="20" r="1.6" fill="#fff8e0" opacity="0.8"/>
-        <!-- dune silhouettes -->
-        <path d="M0,75 Q60,50 120,70 Q180,88 240,65 L240,90 L0,90 Z" fill="#1a0800" opacity="0.95"/>
-        <path d="M0,82 Q40,68 90,78 Q140,88 200,75 L240,80 L240,90 L0,90 Z" fill="#0d0400" opacity="0.9"/>
-        <!-- cactus hint -->
-        <rect x="195" y="58" width="3" height="16" fill="#0a1a00" opacity="0.7"/>
-        <rect x="192" y="63" width="8" height="2" fill="#0a1a00" opacity="0.7"/>
-      </svg>
-      <div class="theme-info">
-        <div class="theme-name">Desert Sky</div>
-        <div class="theme-desc">Arid night · Warm amber & dust</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<div class="painting-credit">✦ <em>The Starry Night</em> — Vincent van Gogh, 1889</div>
+<div class="painting-credit">✦ <em>Astronomical Theme</em> — Deep Space · Cyan & Cosmic Violet</div>
 <footer>
   <span id="footer-name" contenteditable="true" spellcheck="false">Ashratul Zannati Purnota</span>
   <span id="footer-year">© 2026 · All rights reserved</span>
@@ -1771,8 +1541,8 @@
           a.classList.add('active');
           // brief flicker pulse
           a.animate([
-            { opacity: 0.4, textShadow: '0 0 30px rgba(232,200,74,1)' },
-            { opacity: 1,   textShadow: '0 0 8px rgba(232,200,74,0.9)' }
+            { opacity: 0.4, textShadow: '0 0 30px rgba(0,212,255,1)' },
+            { opacity: 1,   textShadow: '0 0 8px rgba(0,212,255,0.9)' }
           ], { duration: 350, easing: 'ease-out' });
         }
       } else {
@@ -1850,116 +1620,16 @@ document.querySelectorAll('.lang-bar-wrap').forEach(wrap => {
   } catch(e) {}
 });
 
-// ═══════════════════════════════════════════
-// THEME SWITCHER
-// ═══════════════════════════════════════════
-const THEMES = {
-  'starry-night': {
-    '--bg':           '#080d1e',
-    '--text':         '#ede8d5',
-    '--muted':        '#6a7a9a',
-    '--accent':       '#e8c84a',
-    '--accent2':      '#5b8fd4',
-    '--accent-light': '#141a36',
-    '--border':       '#1c2748',
-    '--card':         '#0c1126',
-    bgFilter: 'brightness(0.45) saturate(1.4) hue-rotate(-5deg)',
-    overlayBg: 'linear-gradient(180deg,rgba(4,8,28,0.60) 0%,rgba(6,12,35,0.48) 35%,rgba(8,15,40,0.52) 65%,rgba(4,8,28,0.68) 100%)',
-  },
-  'deep-space': {
-    '--bg':           '#000510',
-    '--text':         '#d0d8f0',
-    '--muted':        '#556080',
-    '--accent':       '#a080ff',
-    '--accent2':      '#4060c0',
-    '--accent-light': '#0a0820',
-    '--border':       '#1a1540',
-    '--card':         '#060415',
-    bgFilter: 'brightness(0.30) saturate(0.6) hue-rotate(200deg)',
-    overlayBg: 'linear-gradient(180deg,rgba(0,2,15,0.72) 0%,rgba(5,3,25,0.60) 50%,rgba(0,2,15,0.75) 100%)',
-  },
-  'aurora': {
-    '--bg':           '#020d18',
-    '--text':         '#d8f0e8',
-    '--muted':        '#4a7a6a',
-    '--accent':       '#00e8a0',
-    '--accent2':      '#0080c0',
-    '--accent-light': '#041a12',
-    '--border':       '#0a3028',
-    '--card':         '#030e14',
-    bgFilter: 'brightness(0.35) saturate(1.6) hue-rotate(140deg)',
-    overlayBg: 'linear-gradient(180deg,rgba(2,12,20,0.65) 0%,rgba(3,18,15,0.50) 50%,rgba(2,12,20,0.70) 100%)',
-  },
-  'forest': {
-    '--bg':           '#050f08',
-    '--text':         '#d8e8d0',
-    '--muted':        '#4a6a50',
-    '--accent':       '#88dd66',
-    '--accent2':      '#2a8a40',
-    '--accent-light': '#071008',
-    '--border':       '#0f2815',
-    '--card':         '#060e08',
-    bgFilter: 'brightness(0.32) saturate(1.2) hue-rotate(100deg)',
-    overlayBg: 'linear-gradient(180deg,rgba(3,10,5,0.68) 0%,rgba(5,14,8,0.54) 50%,rgba(3,10,5,0.72) 100%)',
-  },
-  'ocean': {
-    '--bg':           '#020c18',
-    '--text':         '#d0e4f0',
-    '--muted':        '#3a6080',
-    '--accent':       '#40c8f0',
-    '--accent2':      '#1880c0',
-    '--accent-light': '#031018',
-    '--border':       '#0a2840',
-    '--card':         '#030e18',
-    bgFilter: 'brightness(0.35) saturate(1.5) hue-rotate(180deg)',
-    overlayBg: 'linear-gradient(180deg,rgba(2,8,20,0.65) 0%,rgba(4,14,28,0.50) 50%,rgba(2,8,20,0.70) 100%)',
-  },
-  'desert': {
-    '--bg':           '#0f0800',
-    '--text':         '#f0e0c0',
-    '--muted':        '#805030',
-    '--accent':       '#f0a030',
-    '--accent2':      '#c06010',
-    '--accent-light': '#180c00',
-    '--border':       '#301800',
-    '--card':         '#120a00',
-    bgFilter: 'brightness(0.38) saturate(1.1) hue-rotate(30deg)',
-    overlayBg: 'linear-gradient(180deg,rgba(15,8,0,0.65) 0%,rgba(20,10,0,0.50) 50%,rgba(15,8,0,0.70) 100%)',
-  },
-};
+// Theme is set to astronomical by default
+document.documentElement.style.setProperty('--bg', '#020409');
+document.documentElement.style.setProperty('--text', '#e8f0ff');
+document.documentElement.style.setProperty('--muted', '#5a7090');
+document.documentElement.style.setProperty('--accent', '#00d4ff');
+document.documentElement.style.setProperty('--accent2', '#a855f7');
+document.documentElement.style.setProperty('--accent-light', '#041020');
+document.documentElement.style.setProperty('--border', '#0d2040');
+document.documentElement.style.setProperty('--card', '#050c18');
 
-function setTheme(key) {
-  const theme = THEMES[key];
-  if (!theme) return;
-  const root = document.documentElement;
-  for (const [prop, val] of Object.entries(theme)) {
-    if (prop.startsWith('--')) root.style.setProperty(prop, val);
-  }
-  // Update background image filter
-  const bgEl = document.querySelector('body');
-  const beforeStyle = document.getElementById('dynamic-bg-style') || (() => {
-    const s = document.createElement('style');
-    s.id = 'dynamic-bg-style';
-    document.head.appendChild(s);
-    return s;
-  })();
-  beforeStyle.textContent = `
-    body::before { filter: ${theme.bgFilter} !important; }
-    body::after  { background: ${theme.overlayBg}, radial-gradient(ellipse 50% 40% at 75% 10%, rgba(232,200,74,0.08) 0%, transparent 60%) !important; }
-  `;
-
-  // Update active state
-  document.querySelectorAll('.theme-card').forEach(c => {
-    c.classList.toggle('active', c.dataset.theme === key);
-  });
-  try { localStorage.setItem('selectedTheme', key); } catch(e) {}
-}
-
-// Restore saved theme
-try {
-  const saved = localStorage.getItem('selectedTheme');
-  if (saved && THEMES[saved]) setTheme(saved);
-} catch(e) {}
 </script>
 
 </body>
